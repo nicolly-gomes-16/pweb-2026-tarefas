@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Deveres</title>
+    </head>
+    <body>
+        <h1>Lista de Deveres:</h1>
+
+        <ul>
+            {% for dever in deveres %}
+                <li>
+                    {{ dever.nome }} -
+                    {{ dever.get_status_display }} -
+                    {{ dever.prazo }} -
+
+                    {% if dever.atrasada %}
+                        <strong style="color:red;">Atrasada</strong>
+                    {% else %}
+                        <strong style="color:green;">No prazo</strong>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+    </body>
+</html>
