@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<h2>{{ post.titulo }}</h2>
+
+<img src="{{ post.imagem.url }}" width="500">
+
+<p>{{ post.texto }}</p>
+
+<p>{{ post.data_publicacao }}</p>
+
+{% endblock %}
